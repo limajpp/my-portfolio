@@ -1,0 +1,14 @@
+#nav-left {
+  justify-self: start;
+}
+
+#nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#nav-right {
+  justify-self: end;
+}

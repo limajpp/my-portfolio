@@ -1,7 +1,13 @@
+import NavBar from "./components/NavBar/NavBar";
+
 function App() {
   return (
     <>
-      <h1>Hello, world!</h1>
+      <main>
+        <section>
+          <NavBar items={["About", "Projects", "Contacts"]} />
+        </section>
+      </main>
     </>
   );
 }
