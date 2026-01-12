@@ -10,8 +10,7 @@ export default function NavBar({ items }: NavBarProps) {
     <nav id="navbar">
       <NavBarItem navPosition="nav-left" reference="/" text="Home" />
       <NavBarItem navPosition="nav-center" reference="#" items={items} />
-      {/* Change "text" prop to "switch" symbol from lucide-react later... */}
-      <NavBarItem navPosition="nav-right" text="Light/Dark Mode" />
+      <NavBarItem navPosition="nav-right" isComponent={true} />
     </nav>
   );
 }
