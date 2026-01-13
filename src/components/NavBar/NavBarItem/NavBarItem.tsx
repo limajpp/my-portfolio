@@ -6,6 +6,7 @@ type IconProps = { className?: string };
 interface IconItem {
   navPosition: "nav-left";
   icon: ComponentType<IconProps>;
+  reference: string;
 }
 
 interface CenterItem {
@@ -29,7 +30,9 @@ export default function NavBarItem(props: NavBarItemProps) {
       const Icon = props.icon;
       return (
         <div id="nav-left">
-          <Icon className="nav-item" />
+          <a href={props.reference} className="nav-item-link">
+            <Icon className="nav-item" />
+          </a>
         </div>
       );
     }
