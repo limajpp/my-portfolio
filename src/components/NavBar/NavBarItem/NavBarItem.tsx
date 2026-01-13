@@ -1,62 +1,63 @@
-import { useState } from "react";
 import "./NavBarItem.css";
-import { ToggleLeft, ToggleRight } from "lucide-react";
+import { useState, type ComponentType } from "react";
 
-interface NavBarItemProps {
-  navPosition: string;
-  reference?: string;
-  items?: string[];
-  text?: string;
-  isComponent?: boolean;
+type IconProps = { className?: string };
+
+interface IconItem {
+  navPosition: "nav-left";
+  icon: ComponentType<IconProps>;
 }
 
-export default function NavBarItem({
-  navPosition,
-  reference,
-  items,
-  text,
-  isComponent,
-}: NavBarItemProps) {
+interface CenterItem {
+  navPosition: "nav-center";
+  items: string[];
+  reference: string;
+}
+
+interface ToggleItem {
+  navPosition: "nav-right";
+  icons: [ComponentType<IconProps>, ComponentType<IconProps>];
+}
+
+type NavBarItemProps = IconItem | CenterItem | ToggleItem;
+
+export default function NavBarItem(props: NavBarItemProps) {
   const [toggleTheme, setToggleTheme] = useState(false);
-  let navItem = undefined;
 
-  // Change the "Home" text into a "home" component from lucide-react later...
-  if (
-    (navPosition === "nav-left" || navPosition === "nav-right") &&
-    !isComponent
-  ) {
-    navItem = (
-      <div id={navPosition}>
-        <a className="nav-item-anchor" href={reference}>
-          {text}
-        </a>
-      </div>
-    );
-  } else if (navPosition === "nav-center") {
-    navItem = (
-      <div id={navPosition}>
-        {items?.map((itemText, index) => {
-          return (
-            <a key={index} className="nav-item-anchor" href={reference}>
-              {itemText}
+  switch (props.navPosition) {
+    case "nav-left": {
+      const Icon = props.icon;
+      return (
+        <div id="nav-left">
+          <Icon className="nav-item" />
+        </div>
+      );
+    }
+
+    case "nav-center":
+      return (
+        <div id="nav-center">
+          {props.items.map((item) => (
+            <a key={item} className="nav-item-anchor" href={props.reference}>
+              {item}
             </a>
-          );
-        })}
-      </div>
-    );
-  } else if (isComponent) {
-    navItem = (
-      <div id={navPosition}>
-        <span onClick={() => setToggleTheme((prev) => !prev)}>
-          {!toggleTheme ? (
-            <ToggleLeft className="nav-item-switch" />
-          ) : (
-            <ToggleRight className="nav-item-switch" />
-          )}
-        </span>
-      </div>
-    );
-  }
+          ))}
+        </div>
+      );
 
-  return navItem;
+    case "nav-right": {
+      const [Off, On] = props.icons;
+      return (
+        <div id="nav-right">
+          <span onClick={() => setToggleTheme((p) => !p)}>
+            {toggleTheme ? (
+              <On className="nav-item" />
+            ) : (
+              <Off className="nav-item" />
+            )}
+          </span>
+        </div>
+      );
+    }
+  }
 }

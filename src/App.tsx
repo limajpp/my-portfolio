@@ -5,7 +5,7 @@ function App() {
     <>
       <main>
         <section>
-          <NavBar items={["About", "Projects", "Contacts"]} />
+          <NavBar />
         </section>
       </main>
     </>
