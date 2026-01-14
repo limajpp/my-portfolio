@@ -1,8 +1,25 @@
-#hero-text {
+.hero-text {
   margin: 0;
-  margin-bottom: 2rem;
-  text-indent: 3ch;
-  text-align: center;
+  font-family: inherit;
+}
+
+.hero-greeting {
+  color: rgb(255, 255, 0, 0.8);
+  font-weight: bold;
   font-size: 1.2rem;
+  display: block;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin: 10px 0;
+  line-height: 1.1;
+  color: white;
+}
+
+.hero-description {
   color: #c4c4c4;
+  font-size: 1.1rem;
+  max-width: 45ch;
+  line-height: 1.6;
 }
