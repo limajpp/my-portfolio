@@ -1,4 +1,5 @@
 import "./Hero.css";
+import data from "../../public/utils/data";
 import HeroImage from "./HeroImage/HeroImage";
 import HeroText from "./HeroText/HeroText";
 import HeroTextContainer from "./HeroText/HeroTextContainer/HeroTextContainer";
@@ -8,15 +9,13 @@ export default function Hero() {
     <div id="hero">
       <HeroTextContainer>
         <HeroText as="span" variant="greeting">
-          Hey, I'm João Pedro 👋
+          {data.HeroText.heroPresentation}
         </HeroText>
         <HeroText as="h1" variant="title">
-          Fullstack Developer
+          {data.HeroText.heroOccupation}
         </HeroText>
         <HeroText as="p" variant="description">
-          I am a fullstack developer currently on an internship building lots of
-          projects. Also, I'm on the 6th period of my Computer Science course at
-          UNIFOR.
+          {data.HeroText.heroAbout}
         </HeroText>
       </HeroTextContainer>
       <HeroImage
