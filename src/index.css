@@ -146,6 +146,9 @@ button {
   line-height: 1.5;
   font-family: inherit;
   cursor: pointer;
+  color: inherit;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
 }
 
 input {
