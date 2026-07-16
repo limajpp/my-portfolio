@@ -1,8 +1,18 @@
+import BaseLayout from "./components/layout/BaseLayout/BaseLayout";
+
 function App() {
   return (
-    <main>
-      <h1>My Portfolio</h1>
-    </main>
+    <BaseLayout>
+      <main
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ margin: "auto" }}>My Portfolio</h1>
+      </main>
+    </BaseLayout>
   );
 }
 
