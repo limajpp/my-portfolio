@@ -156,4 +156,7 @@ input {
   font-weight: var(--font-weight-normal);
   line-height: 1.5;
   font-family: inherit;
+  color: inherit;
+  background-color: var(--input-background);
+  border: 1px solid var(--border);
 }
