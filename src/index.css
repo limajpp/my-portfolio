@@ -44,6 +44,15 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+#root {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
 .dark {
   --background: #0a0a0a;
   --foreground: #e8e8e8;
