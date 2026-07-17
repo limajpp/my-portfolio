@@ -1,52 +1,6 @@
-#header {
+#header-content {
   display: flex;
   flex-direction: column;
-  padding: 8px 16px;
-}
-
-#ascii-text-container {
-  position: relative;
-}
-
-#ascii-text-container span {
-  position: absolute;
-  bottom: 0.25px;
-  background-color: var(--background);
-  color: var(--primary);
-}
-
-#header-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#action {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-}
-
-#action > div {
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-}
-
-#action > div:nth-child(1) {
-  background-color: red;
-}
-
-#action > div:nth-child(2) {
-  background-color: yellow;
-}
-
-#action > div:nth-child(3) {
-  background-color: green;
-}
-
-.folder-path-text {
-  opacity: 0.25;
-  margin: auto 0;
+  padding: 30px;
+  gap: 1.5rem;
 }
