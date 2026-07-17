@@ -1,19 +1,7 @@
-import BaseLayout from "./components/layout/BaseLayout/BaseLayout";
+import Header from "./components/layout/Header/Header";
 
 function App() {
-  return (
-    <BaseLayout>
-      <main
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h1 style={{ margin: "auto" }}>My Portfolio</h1>
-      </main>
-    </BaseLayout>
-  );
+  return <Header />;
 }
 
 export default App;
