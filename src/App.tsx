@@ -1,9 +1,7 @@
+import Header from "./components/layout/Header/Header";
+
 function App() {
-  return (
-    <main>
-      <h1>My Portfolio</h1>
-    </main>
-  );
+  return <Header />;
 }
 
 export default App;

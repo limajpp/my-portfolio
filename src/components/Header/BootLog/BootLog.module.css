@@ -1,0 +1,23 @@
+#boot-log {
+  display: flex;
+  flex-direction: column;
+}
+
+.log {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+.log > span {
+  color: var(--primary);
+}
+
+.log > p {
+  margin: 0;
+  color: rgba(232, 232, 232, 0.25);
+}
+
+.log > p::first-letter {
+  color: var(--primary);
+}
